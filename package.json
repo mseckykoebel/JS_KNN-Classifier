@@ -1,0 +1,31 @@
+{
+  "name": "iems_project1_folder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "browserify": "^16.2.3",
+    "eslint": "^5.13.0",
+    "f": "^1.4.0",
+    "fs": "^0.0.1-security",
+    "jquery": "^3.3.1",
+    "jslint": "^0.12.1",
+    "lodash": "^4.17.11",
+    "papaparse": "^4.6.3",
+    "shuffle-seed": "^1.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mseckykoebel/IEMS313-Project1.git"
+  },
+  "author": "Mason Secky-Koebel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mseckykoebel/IEMS313-Project1/issues"
+  },
+  "homepage": "https://github.com/mseckykoebel/IEMS313-Project1#readme"
+}
