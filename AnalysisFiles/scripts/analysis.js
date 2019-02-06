@@ -67,3 +67,8 @@ function knn(data, point, k) {
 
 // Event listener for the button on the HTML side
 document.querySelector('button#analyze').addEventListener('click', runAnalysis);
+document.querySelector('button#reload').addEventListener('click', function reload() {
+    location.reload();
+});
+
+// browserify AnalysisFiles\scripts\analysis.js -o AnalysisFiles\dist\bundle.js
