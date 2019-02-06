@@ -3,14 +3,17 @@ const _ = require('lodash');
 const trainingSet = require("./trainingSet");
 const testSet = require("./testSet");
 
-// number of arrays we will call on from the trainingSet (104 = MAXIMUM)
-const testSetSize = 104;
-
 // console.log(trainingSet);
 // console.log(testSet);
 
 // Function that runs the KNN function, checks for accuracy, and logs to the console
 function runAnalysis() {
+    // number of arrays we will call on from the trainingSet (104 = MAXIMUM)
+    const testSetSize = 104;
+    if (testSetSize > 104 || testSetSize < 0) {
+        return console.error("Please make sure the number of testSets are between 0 and 104, inc 104");
+
+    };
 
     // Check for values of K between 1 - 20
     // data is the trainingSet passed into KNN alg

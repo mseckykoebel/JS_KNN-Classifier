@@ -1,0 +1,12 @@
+.target-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  canvas {
+    border: 1px solid gray;
+  }
