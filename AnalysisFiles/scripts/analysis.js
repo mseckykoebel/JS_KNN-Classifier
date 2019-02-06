@@ -1,19 +1,28 @@
-const outputs = [];
-const loadCSV = require("./load-csv");
+const _ = require('lodash');
+const trainingSet = require("./trainingSet");
+const testSet = require("./testSet"); 
 
 // Takes CSV file
 // Specify the columns that are labels, and the columns of features
-let data = loadCSV('Training_Dataset.csv', {
-    shuffle: false,
-    dataColumns: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
-        '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45',
-        '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60'
-    ],
-    labelColumns: ['Label'],
-    converters: {}
-});
+// enter the arguments here and you will get the actual data for everything
+// let data = loadCSV();
 
-console.log(data);
+// here is the array of trainngData
+
+// for the sake of testing, this is the one validation point
+// in the future, this will be a lot larger
+
+console.log(trainingSet);
+console.log("hello mason");
+
+function runAnalysis() {
+    // number of arrays we will call on from the trainingSet (104 = MAXIMUM)
+    const testSetSize = 104;
+    if (testSetSize > 104 || testSetSize < 0) {
+        return console.error("Please make sure the number of testSets are between 0 and 104, inc 104");
+        
+    };
+}
 
 // Function determines the distance between two features, and returns them
 // Distance determined by the pythagorean theorem
