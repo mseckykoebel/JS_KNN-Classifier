@@ -6,23 +6,34 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+"
+        crossorigin="anonymous">
     <title>IEMS 313 Project Window in Browser</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <noscript>
-        You need to enable JavaScript to run this app.
-    </noscript>
-    <h1>All analysis is will be done in the console (for now...)
-        <h3>
+    <div class="container">
+        <noscript>
+            You need to enable JavaScript to run this app.
+        </noscript>
+        <h1 class="text-center">All analysis is will be done in the console</h1>
+        <h4 class="text-center">(for now...)</h4>
+        <h3 class="text-center">
             Press ctrl + shift + j to access
         </h3>
-    </h1>
 
-
-    <button class="ui primary button" id="analyze">Analyze!</button>
-    <button class="ui primary button" id="reload">Reload the Page</button>
+        <br>
+        <br>
+        
+        <div class="text-center">
+            <button class="btn btn-default" type="submit" id="analyze">Analyze!</button>
+            <button class="btn btn-default" type="submit" id="reload">Reload the Page</button>
+            <button class="btn btn-warning" type="submit" id="consoleClear">Clear the console</button>
+        </div>
+    </div>
 
     <!-- Combining the JS files into the bundle with browserify -->
     <script src="dist/bundle.js"></script>
