@@ -44,7 +44,7 @@ function runAnalysis() {
             console.log('For a K value of ', k, ', the KNN funtion is ', accuracy * 100, ' percent accurate.');
         })
 
-    } else if (testSetSize === 104) {
+    } else {
         // Check for values of K between 1 - 20
         // data is the trainingSet passed into KNN alg
         // testPoint is one of the arrays in testSet, omitting the first point which is the label
@@ -65,9 +65,6 @@ function runAnalysis() {
             // Now we return an array that only has the accuracy metric
             console.log('For a K value of ', k, ', the KNN funtion is ', accuracy * 100, ' percent accurate.');
         })
-    } else {
-        console.error("Please enter a value between 0 and 105, not including 105");
-        
     }
 
 }
