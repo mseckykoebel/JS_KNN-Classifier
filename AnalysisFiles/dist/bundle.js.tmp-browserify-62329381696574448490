@@ -9,7 +9,7 @@ function runAnalysis() {
     // the size of the testing set
     const testSetSize = 104;
 
-    _.range(1, 15).forEach(k => {
+    _.range(1, 25).forEach(k => {
         // Pass in an array and a function
         // testPoint is the value we care about, and this is testSet[0], as it has the label
         // trainingSet has the label and all (as we need it)
@@ -74,6 +74,7 @@ document.querySelector('button#reload').addEventListener('click', function reloa
 document.querySelector('button#consoleClear').addEventListener('click', function clear() {
     console.clear();
 })
+
 // browserify AnalysisFiles\scripts\analysis.js -o AnalysisFiles\dist\bundle.js
 },{"./testSet":2,"./trainingSet":3,"lodash":4}],2:[function(require,module,exports){
 module.exports = testSet = [
