@@ -8,7 +8,7 @@ function runAnalysis() {
     // the size of the testing set
     const testSetSize = 104;
 
-    _.range(1, 15).forEach(k => {
+    _.range(1, 101).forEach(k => {
         // Pass in an array and a function
         // testPoint is the value we care about, and this is testSet[0], as it has the label
         // trainingSet has the label and all (as we need it)
@@ -19,7 +19,7 @@ function runAnalysis() {
             .filter(testPoint => knn(trainingSet, _.tail(testPoint), k) === testPoint[0])
             .size()
             .divide(testSetSize) // only pass in the number we are dividing by
-            .value()
+            .value() // this outputs the value
 
         // Now we return an array that only has the accuracy metric
         console.log('For a K value of ', k, ', the KNN funtion is ', accuracy * 100, ' percent accurate.');
@@ -38,7 +38,7 @@ function distance(pointA, pointB) {
         .value() ** 0.5;
 };
 
-//// MAP EXPLAINED /////
+//// MAP EXPLAINED ////
 // map says that over this collection (array), run this function
 
 // KNN function that does the calculation of best K
@@ -56,9 +56,9 @@ function knn(data, point, k) {
         })
         .sortBy(row => row[0]) // sort by least to greatest differences, row is an array
         .slice(0, k) // cut the array down by the top "k" records!! GOOD  
-        .countBy(row => row[1]) // sort by the most common label, located in row[0] GOOD
+        .countBy(row => row[1]) // the laebl that appears most often will be at index 0 ( located in row[0] GOOD )
         .toPairs() // convert the above to arrays, and not objects
-        .sortBy(row => row[0]) // sort by least->greatest, and most common label will be at the bottom
+        .sortBy(row => row[1]) // sort by least-> greatest, and most common label will be at the bottom
         .last() // return the last element in the big array [56, -1] for example
         .first() // get the first element out of the array, so most common label is now here (-1 or 1)
         .parseInt() // remove the quotes, convert from string to integer
