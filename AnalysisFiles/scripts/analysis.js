@@ -6,7 +6,7 @@ const testSet = require("./testSet"); // TESTING ARRAY
 function runAnalysis() {
 
     // the size of the testing set
-    const testSetSize = 104;
+    const trainingSetSize = 104;
 
     _.range(1, 111).forEach(k => {
         // Pass in an array and a function
@@ -18,7 +18,7 @@ function runAnalysis() {
         const accuracy = _.chain(testSet)
             .filter(testPoint => knn(trainingSet, _.tail(testPoint), k) === testPoint[0])
             .size()
-            .divide(testSetSize) // only pass in the number we are dividing by
+            .divide(trainingSetSize) // only pass in the number we are dividing by
             .value() // this outputs the value
 
         // Now we return an array that only has the accuracy metric
@@ -56,9 +56,9 @@ function knn(data, point, k) {
         })
         .sortBy(row => row[0]) // sort by least to greatest differences, row is an array
         .slice(0, k) // cut the array down by the top "k" records!! GOOD  
-        .countBy(row => row[1]) // the laebl that appears most often will be at index 0 ( located in row[0] GOOD )
+        .countBy(row => row[1]) // the laebl that appears most often will be at index 0 ( located in row[1] GOOD )
         .toPairs() // convert the above to arrays, and not objects
-        .sortBy(row => row[1]) // sort by least-> greatest, and most common label will be at the bottom
+        .sortBy(row => row[1]) // sort by least-> greatest, using the second element as the sorting criteria
         .last() // return the last element in the big array [56, -1] for example
         .first() // get the first element out of the array, so most common label is now here (-1 or 1)
         .parseInt() // remove the quotes, convert from string to integer
