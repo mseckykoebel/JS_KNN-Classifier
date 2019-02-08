@@ -8,7 +8,7 @@ function runAnalysis() {
     // the size of the testing set
     const testSetSize = 104;
 
-    _.range(1, 101).forEach(k => {
+    _.range(1, 111).forEach(k => {
         // Pass in an array and a function
         // testPoint is the value we care about, and this is testSet[0], as it has the label
         // trainingSet has the label and all (as we need it)
