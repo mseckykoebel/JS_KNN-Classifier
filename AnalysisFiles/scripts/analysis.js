@@ -68,7 +68,7 @@ function knn(data, point, k) {
 // Event listener for all of the HTML buttons
 document.querySelector('button#analyze').addEventListener('click', runAnalysis);
 document.querySelector('button#reload').addEventListener('click', function reload() {
-    location.reload();
+    location.reload(); 
 });
 document.querySelector('button#consoleClear').addEventListener('click', function clear() {
     console.clear();
