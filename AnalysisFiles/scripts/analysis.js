@@ -68,9 +68,29 @@ function knn(data, point, k) {
 // Event listener for all of the HTML buttons
 document.querySelector('button#analyze').addEventListener('click', runAnalysis);
 document.querySelector('button#reload').addEventListener('click', function reload() {
-    location.reload(); 
+    location.reload();
 });
-document.querySelector('button#consoleClear').addEventListener('click', function clear() {
+document.querySelenctor('button#consoleClear').addEventListener('click', function clear() {
     console.clear();
 })
 // browserify AnalysisFiles\scripts\analysis.js -o AnalysisFiles\dist\bundle.js
+
+// Normalization Function for data that is non-normalized
+function minMax(data, featureCount) {
+    const clonedData = _.cloneDeep(data);
+
+    for (let i = 0; i < featureCount; i++) {
+        const column = columData.map(row =>
+            row[i]
+        );
+        const min = _.min(column);
+        const max = _.max(column);
+
+        // implementing the minMax basic norm alg. on the feature set
+        for (let j = 0; j < clonedData.length; j++) {
+            clonedData[j][i] = (clonedData[j][i] - min) / (max - min);
+        }
+    }
+
+    return clonedData;
+}
