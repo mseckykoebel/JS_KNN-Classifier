@@ -77,20 +77,33 @@ document.querySelenctor('button#consoleClear').addEventListener('click', functio
 
 // Normalization Function for data that is non-normalized
 function minMax(data, featureCount) {
+
+    // recursively clones data, as to not mutate
     const clonedData = _.cloneDeep(data);
 
+    // featureCount is the amount of features we have in the dataSet
     for (let i = 0; i < featureCount; i++) {
-        const column = columData.map(row =>
-            row[i]
+
+        // extract one column at a time
+        const column = clonedData.map(row =>
+            row[i] // return the ith element, and you make a new array of numbers
         );
+
+        // get the min and max values in the column
         const min = _.min(column);
         const max = _.max(column);
 
         // implementing the minMax basic norm alg. on the feature set
+        // i goes through all of the columns, and j goes through all of the rows
         for (let j = 0; j < clonedData.length; j++) {
+
+            // clonedData, at row j and column i, is that value, minus the min, and over the max minus the min
+            // this is done for all of the cloned data points
+            // this is mutating all of the data in clonedData
             clonedData[j][i] = (clonedData[j][i] - min) / (max - min);
         }
     }
 
+    // returns the new array
     return clonedData;
 }
